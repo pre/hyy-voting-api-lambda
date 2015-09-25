@@ -36,7 +36,7 @@ function error(message) {
   return { error: { message: message } }
 }
 
-app.post('/sessions/create', function(req, res) {
+app.post('/sessions', function(req, res) {
   var token = req.body.token;
 
   if (!token) {
