@@ -28,7 +28,7 @@ var issuedTokens = [{
   }
 }];
 
-function createToken(user) {
+function createJwt(user) {
   return jwt.sign(_.omit(user, 'dontIncludeThis'), config.secret, { expiresInMinutes: 60*5 });
 }
 
@@ -50,7 +50,7 @@ app.post('/sessions/create', function(req, res) {
   }
 
   res.status(201).send({
-    jwt: createToken(issuedToken.user),
+    jwt: createJwt(issuedToken.user),
     details: issuedToken.response
   });
 });
