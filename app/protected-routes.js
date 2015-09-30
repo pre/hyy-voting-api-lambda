@@ -10,10 +10,12 @@ app.get('/votes/test', function(req, res) {
 // This endpoint is idempotent, ie. subsequent requests will not create
 // a new vote, instead the existing vote is updated if needed.
 app.post('/votes', function(req, res) {
-  event = {};
-  context = {
+  event = {
     token: req.headers['x-access-token'],
-    done: function(wat) {
+  };
+
+  context = {
+    done: function(success, wat) {
       return wat;
     },
   };
