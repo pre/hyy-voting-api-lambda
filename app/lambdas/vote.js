@@ -1,4 +1,4 @@
-var config  = require('../config'),
+var config  = require('./config'),
     jwt     = require('jsonwebtoken');
 
 exports.handler = function(event, context) {

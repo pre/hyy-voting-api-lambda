@@ -1,6 +1,6 @@
 var express = require('express'),
     _       = require('lodash'),
-    config  = require('./config'),
+    config  = require('./lambdas/config'),
     jwt     = require('jsonwebtoken');
 
 var app = module.exports = express.Router();
