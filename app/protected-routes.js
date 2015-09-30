@@ -16,11 +16,14 @@ app.post('/votes', function(req, res) {
 
   context = {
     done: function(success, wat) {
-      return wat;
+      return res.status(200).send({ response: wat });
+    },
+
+    fail: function(msg) {
+      return res.status(401).send({response: msg });
     },
   };
 
-  res.status(200).send(
-    { response: lambda.handler(event, context) }
-  );
+
+  lambda.handler(event, context);
 });

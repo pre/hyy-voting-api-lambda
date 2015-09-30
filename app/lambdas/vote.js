@@ -3,8 +3,14 @@ var config  = require('./config'),
 
 exports.handler = function(event, context) {
   console.log("has event:", event);
+  var decoded;
 
-  var decoded = jwt.verify(event.token, config.secret, {});
+  try {
+    decoded = jwt.verify(event.token, config.secret, {});
+  } catch (e) {
+    console.log('Failed: ', e);
+    context.fail('Something went wrong');
+  }
 
   console.log('jwt decoded: ', decoded);
 
