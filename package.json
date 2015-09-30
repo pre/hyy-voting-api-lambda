@@ -10,8 +10,7 @@
     "type": "git",
     "url": "https://github.com/pre/hyy-voting-api.git"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "author": "Petrus Repo",
   "license": "MIT",
   "bugs": {
@@ -26,7 +25,7 @@
     "errorhandler": "^1.1.1",
     "express": "^4.8.5",
     "express-jwt": "^0.3.1",
-    "jsonwebtoken": "^1.1.2",
+    "jsonwebtoken": "^5.0.5",
     "lodash": "^2.4.1",
     "morgan": "^1.2.3"
   }
